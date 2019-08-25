@@ -1,0 +1,226 @@
+/**************
+ * General
+**************/
+:root {
+    --white-text: rgba(255, 255, 255, .8);
+    --primary-blue: #2FB9EE;
+    --secondary-blue: #27a1d0;
+    --card-padding: 25px;
+    --light-grey: rgba(0, 0, 0, .08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #C0CEE0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 80vh;
+    margin: 10vh auto;
+}
+
+.card {
+    width: 48%;
+    position: relative;
+    background-color: #fff;
+    border-radius: 2px;
+    height: 100%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+/**************
+ * Left box
+**************/
+
+.add-event {
+    background-color: #46529D;
+    color: #fff;
+    padding: var(--card-padding);
+}
+
+.add-event .title {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    margin-bottom: 5%;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid var(--white-text);
+    padding: 10px;
+    color: var(--white-text);
+    font: inherit;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+select option {
+    color: #000;
+    font-weight: 300;
+}
+
+input::-webkit-datetime-edit {
+    color: var(--white-text);
+    border-color: var(--white-text);
+}
+
+.form-control::placeholder {
+    color: var(--white-text);
+}
+
+button {
+    background: var(--primary-blue);
+    color: #fff;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    text-transform: uppercase;
+    margin: 5% auto;
+    font: inherit;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-blue)
+}
+
+/**************
+ * Right box
+**************/
+
+.hero {
+    background-image: url(./images/hero-bg.jpg);
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: 50% 74%;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.counter {
+    font-size: 2em;
+}
+
+.events-list {
+    overflow-x: hidden;
+    height: calc(80vh - 150px);
+}
+
+.event {
+    padding: var(--card-padding);
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.event:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .03);
+}
+
+.event .event-header {
+    display: flex;
+    align-items: center;
+}
+
+.event .event-header .icon {
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--light-grey);
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.icon.reminder {
+    background-image: url('./images/reminder.png');
+}
+
+.icon.meeting {
+    background-image: url('./images/meeting.png');
+}
+
+.event .event-header .title {
+    flex-grow: 1;
+}
+
+.event .event-header .title h3 {
+    margin: 0 0 5px 0
+}
+
+.event .event-header .delete {
+    margin: 0 0 0 10px;
+    padding: 5px 10px;
+    width: auto;
+    background: #ee2f4e;
+    font-size: 1.2em;
+}
+
+.event .event-header .delete:hover {
+    background-color: #c7223d;
+}
+
+.event .event-body {
+    line-height: 1.5;
+}
+
+.hidden {
+    display: none;
+}
+
+/**************
+ * Responsiveness
+**************/
+
+@media screen and (max-width: 800px) {
+    .container {
+        height: auto;
+        margin: 3vh auto;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 550px;
+        margin: auto auto 25px auto;
+    }
+
+    .events {
+        order: 0;
+    }
+
+    .add-event {
+        order: 1;
+    }
+}

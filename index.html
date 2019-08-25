@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JS calendar</title>
+    <meta name="author" content="Monika Junik">
+    <meta name="description" content="A simple JS app for learning purposes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="./images/reminder.png"/>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="card add-event">
+        <h2 class="title">Add new event</h2>
+
+        <form id="js_addEventForm">
+            <select class="form-control" id="js_eventType" title="Event type">
+                <option>Reminder</option>
+                <option>Meeting</option>
+            </select>
+
+            <input type="text" class="form-control" id="js_eventTitle" required placeholder="Title" title="Event title">
+
+            <input type="date" class="form-control" id="js_eventDate" required placeholder="Date" title="Event date">
+
+            <textarea class="form-control" rows="1" id="js_eventNotes" placeholder="Notes" title="Notes"></textarea>
+
+            <div id="js_meetingFields" class="hidden">
+                <input type="text" class="form-control" id="js_eventPlace" placeholder="Place" title="Place">
+
+                <input type="text" class="form-control" id="js_eventPeople" placeholder="People" title="People">
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Add event!</button>
+        </form>
+    </div>
+
+    <div class="card events">
+        <div class="hero">
+            <h1>Your events</h1>
+            <div class="counter" id="js_eventsCounter">5</div>
+        </div>
+
+        <div class="events-list" id="js_eventsList"></div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
