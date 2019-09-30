@@ -12,6 +12,13 @@
 
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#46529d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="StormFront">
+    <link rel="apple-touch-icon" href="/images/app-icons/icon-152x152.png">
 </head>
 
 <body>
@@ -51,5 +58,17 @@
 </div>
 
 <script src="main.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () =>
+            navigator.serviceWorker
+                .register('./service-worker.js')
+                .then(
+                    res => console.log('Service worker registered! ', res),
+                    err => console.log('Service worker NOT registered! ', err)
+                )
+        );
+    }
+</script>
 </body>
 </html>
